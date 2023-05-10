@@ -1,5 +1,6 @@
 package test;
 
+import main.CopyCat;
 import main.Move;
 import main.Player;
 import org.junit.jupiter.api.Nested;
@@ -14,8 +15,15 @@ class PlayerTest {
 
         @Test
         public void expectPlayerToBeCreated(){
-            assertDoesNotThrow(() -> new Player("A", ));
+            assertDoesNotThrow(() -> new Player("A", new CopyCat()));
         }
+
+        @Test
+        public void expectExceptionForEmptyName(){
+            assertThrows(IllegalArgumentException.class, () -> new Player("", new CopyCat()));
+        }
+
+
     }
 
 }
