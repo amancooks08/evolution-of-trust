@@ -1,16 +1,19 @@
 package main;
 
 public class Player {
-    private String name;
-    private int score;
-    private Strategy strategy;
 
-    public Player(String name, Strategy strategy) throws IllegalArgumentException{
+    private String name;
+    public int score;
+
+    public Player(String name) throws IllegalArgumentException{
         if (name == "" || name == " "){
             throw new IllegalArgumentException("Invalid name");
         }
         this.name = name;
         this.score = 0;
-        this.strategy = strategy;
+    }
+
+    public void incrementScore(int points){
+        this.score += points;
     }
 }

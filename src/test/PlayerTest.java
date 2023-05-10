@@ -13,12 +13,12 @@ class PlayerTest {
     class TestConstructor {
         @Test
         public void expectPlayerToBeCreated(){
-            assertDoesNotThrow(() -> new Player("A", new CopyCat()));
+            assertDoesNotThrow(() -> new Player("A"));
         }
 
         @Test
         public void expectExceptionForEmptyName(){
-            assertThrows(IllegalArgumentException.class, () -> new Player("", new CopyCat()));
+            assertThrows(IllegalArgumentException.class, () -> new Player(""));
         }
     }
 
@@ -26,7 +26,7 @@ class PlayerTest {
     class TestIncrementScore {
         @Test
         public void expectScoreToIncreaseAccordingToThePoints(){
-            Player aman = new Player("A", new CopyCat());
+            Player aman = new Player("A");
             Integer prevScore = aman.score;
             aman.incrementScore(4);
             assertEquals(aman.score, 4);
