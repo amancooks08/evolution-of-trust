@@ -1,19 +1,11 @@
 package main;
 
-public class CopyCat implements Strategy{
-    private Move opponentLastMove;
-
-    public CopyCat(){
-        opponentLastMove = Move.COOPERATE;
-    }
-
+public class CopyCat extends Player{
     @Override
-    public Move chooseMove(){
-        return opponentLastMove;
-    }
-
-    @Override
-    public void updateOpponentLastMove(Move opponentMove){
-        opponentLastMove = opponentMove;
+    Move makeMove(){
+        if(this.score != null && this.score <= 0){
+            return Move.CHEAT;
+        }
+        return Move.COOPERATE;
     }
 }

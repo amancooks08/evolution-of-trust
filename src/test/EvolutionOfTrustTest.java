@@ -1,6 +1,8 @@
 package test;
 
 import main.EvolutionOfTrust;
+import main.Move;
+import main.Player;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Nested;
 
@@ -19,6 +21,15 @@ public class EvolutionOfTrustTest {
         @Test
         public void testConstructorForValidRounds() {
             assertDoesNotThrow(() -> new EvolutionOfTrust("A", "B", 5));
+        }
+    }
+
+    @Nested
+    class TestPlayGame {
+        @Test
+        public void testPlayGameForOneRound(){
+            Player person1 = new Player("A");
+            Player person2 = new Player("B");
         }
     }
 }

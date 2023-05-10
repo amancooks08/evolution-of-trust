@@ -16,4 +16,8 @@ public class Player {
     public void incrementScore(int points){
         this.score += points;
     }
+
+    public Move makeMove(String move){
+
+    }
 }
