@@ -18,10 +18,10 @@ public class ScoreCard {
 
     public int declareResults(){
         if (this.player1 == this. player2) {
-            if(this.player1 == 0) return -1;
-            return 0;
+            if(this.player1 == 0) return -1; // when both cheat
+            return 0; //when both cooperate
         }
-        else if (this.player1 > this.player2) return 1;
-        else return 2;
+        else if (this.player1 > this.player2) return 1; // player1 wins
+        else return 2; //player2 wins
     }
 }

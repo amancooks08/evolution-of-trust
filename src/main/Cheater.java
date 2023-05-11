@@ -1,8 +1,6 @@
 package main;
 
-public class Cheater extends Player{
-
-
+public class Cheater implements Player{
     @Override
     public Move makeMove() {
         return Move.CHEAT;

@@ -1,6 +1,5 @@
 package test;
 
-import com.sun.tools.javac.util.Pair;
 import main.Move;
 import org.junit.jupiter.api.Test;
 import main.RuleEngine;
@@ -13,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RuleEngineTest {
 
     @Test
-    public void user1AndUser2ShouldCooperate(){
+    public void expectsUser1AndUser2ToCooperate(){
         List<Integer> result = new RuleEngine().checkInputs(Move.COOPERATE, Move.COOPERATE);
         List<Integer> expected = new ArrayList<>();
         expected.add(2);
@@ -22,7 +21,7 @@ public class RuleEngineTest {
     }
 
     @Test
-    public void user1AndUser2ShouldCheat(){
+    public void expectsUser1AndUser2ToCheat(){
         List<Integer> result = new RuleEngine().checkInputs(Move.CHEAT, Move.CHEAT);
         List<Integer> expected = new ArrayList<>();
         expected.add(0);
@@ -30,7 +29,7 @@ public class RuleEngineTest {
         assertEquals(expected,result);
     }
     @Test
-    public void user1ShouldCooperateAndUser2ShouldCheat(){
+    public void expectsUser1ToCooperateAndUser2ToCheat(){
         List<Integer> result = new RuleEngine().checkInputs(Move.COOPERATE, Move.CHEAT);
         List<Integer> expected = new ArrayList<>();
         expected.add(-1);
@@ -38,7 +37,7 @@ public class RuleEngineTest {
         assertEquals(expected,result);
     }
     @Test
-    public void user1ShouldCheatAndUser2ShouldCooperate(){
+    public void expectsUser1ToCheatAndUser2ToCooperate(){
         List<Integer> result = new RuleEngine().checkInputs(Move.CHEAT, Move.COOPERATE);
         List<Integer> expected = new ArrayList<>();
         expected.add(3);

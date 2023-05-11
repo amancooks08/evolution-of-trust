@@ -1,9 +1,5 @@
 package main;
 
-public class Player {
-
-
-    public Move makeMove(){
-        return null;
-    }
+public interface Player {
+    public Move makeMove();
 }

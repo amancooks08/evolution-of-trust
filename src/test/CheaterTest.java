@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CheaterTest {
-
     @Test
     public void expectCheatMoveOnWhenMoveIsCalled(){
         Player cheat = new Cheater();
